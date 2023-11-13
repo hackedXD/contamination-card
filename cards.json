@@ -1,0 +1,14 @@
+[
+	{
+		"name": "Cleanse",
+		"effects": "Cleanses 5 corruption",
+		"cost": 0,
+		"rarity": 1
+	},
+	{
+		"name": "Greater Cleanse",
+		"effects": "Cleanses 10 corruption",
+		"cost": 1,
+		"rarity": 2
+	}
+]

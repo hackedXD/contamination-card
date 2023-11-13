@@ -1,0 +1,6 @@
+res://scenes/main.tscn
+res://cards.json
+res://scenes/card.tscn
+res://scripts/card.gd
+res://scripts/main.gd
+res://scenes/bar.tscn
