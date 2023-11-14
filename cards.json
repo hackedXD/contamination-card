@@ -2,13 +2,71 @@
 	{
 		"name": "Cleanse",
 		"effects": "Cleanses 5 corruption",
+		"asset": "cleanse.png",
 		"cost": 0,
-		"rarity": 1
+		"action": "corruption+-5"
 	},
 	{
 		"name": "Greater Cleanse",
 		"effects": "Cleanses 10 corruption",
 		"cost": 1,
-		"rarity": 2
+		"asset": "greaterCleanse.png",
+		"action": "corruption+-10"
+	},
+	{
+		"name": "Corrupt",
+		"effects": "Deal 5 corruption",
+		"cost": 0,
+		"asset": "corrupt.png",
+		"action": "enemyCorruption+5"
+	},
+	{
+		"name": "Greater Corrupt",
+		"effects": "Deal 10 corruption",
+		"cost": 1,
+		"asset": "greaterCorrupt.png",
+		"action": "enemyCorruption+10"
+	},
+	{
+		"name": "Providence",
+		"effects": "Grants yourself a shield, absorbing 10 corruption",
+		"cost": 1,
+		"asset": "providence.png",
+		"action": "statusShield"
+	},
+	{
+		"name": "M.A.C.",
+		"effects": "Take and Deal 10 Corruption",
+		"cost": 1,
+		"asset": "M.A.C..png",
+		"action": "corruption+10/enemyCorruption+10"
+	},
+	{
+		"name": "Old Notebook",
+		"effects": "Take 10 corruption. Draw 2 cards",
+		"cost": 1,
+		"asset": "oldNotebook.png",
+		"action": "corruption+10/draw+2"
+	},
+	{
+		"name": "Inheritance",
+		"effects": "Gain 2 mana next turn",
+		"cost": 1,
+		"asset": "inheritance.png",
+		"action": "statusInheritance"
+	},
+	{
+		"name": "Recycling Edict",
+		"effects": "Take 5 Corruption. Trade one random card",
+		"cost": 0,
+		"asset": "recyclingEdict.png",
+		"action": "corruption+5/delete+1/draw+1"
+	},
+	{
+		"name": "Toxic Spill",
+		"effects": "Apply 4 Poison to Enemy.",
+		"cost": 1,
+		"asset": "toxicSpill.png",
+		"action": "statusPoison+4"
 	}
 ]

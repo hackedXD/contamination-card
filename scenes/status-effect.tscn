@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmc6ypq53fvcu"]
+
+[ext_resource type="FontFile" uid="uid://dh6layjxwo0tl" path="res://assets/Kenney Pixel Square.ttf" id="1_65scm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_b5nvp"]
+font = ExtResource("1_65scm")
+font_size = 28
+font_color = Color(1, 0, 0, 1)
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label"]
+text = "+4 Poison"
+label_settings = SubResource("LabelSettings_b5nvp")

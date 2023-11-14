@@ -1,58 +1,74 @@
-extends Control
+extends TextureRect
 
-@onready var name_decoration: Sprite2D = $"name decoration"
-@onready var frame_decoration: Sprite2D = $"frame decoration"
-@onready var desc_decoration: Sprite2D = $"desc decoration"
-@onready var name_label = $"name decoration/name label"
-@onready var description_label = $"desc decoration/description label"
+@export var played: Node
+
+var original_scale 
+var original_y_position
+
+var mana_cost
+var action_string
 
 
-
-var original_card_scale = Vector2.ZERO
-var mouse_over = false
-var dragging = false
-var relative_dragging_position = Vector2.ZERO
-
-const rarity_positions = {
-	"name": [16, 135, 252],
-	"frame": [22, 140, 257],
-	"desc": [17, 135, 252]
-}
-
-func _ready():
-	self.position.y = 0
-	self.size = Vector2(100, 128)
-	self.scale = Vector2(1, 1)
-	self.pivot_offset = Vector2(50, 128)
+func run_action(main_player, opponent_player):
+	
+	var actions = action_string.split("/")
+	
+	var first_word_regex = RegEx.new()
+	var error = first_word_regex.compile("/[a-z]/g")
+	if error:
+		print(error)
+	for action in actions:
+		print(action)
+		print(first_word_regex.get_pattern())
+		var firstWord = first_word_regex.search(action)
+		
+		print(action, firstWord.get_string())
+	
+	
 
 func new(card_object):
-	name_decoration.region_rect.position.x = rarity_positions["name"][card_object["rarity"] - 1]
-	frame_decoration.region_rect.position.x = rarity_positions["frame"][card_object["rarity"] - 1]
-	desc_decoration.region_rect.position.x = rarity_positions["desc"][card_object["rarity"] - 1]
+	self.texture = load("res://assets/card/" + card_object["asset"])
+	$name.text = card_object["name"]
+	$description.text = card_object["effects"]
+	mana_cost = card_object["cost"]
+	action_string = card_object["action"]
+
+func _get_drag_data(at_position):
+	var control_preview = Control.new()
+	var clone = self.duplicate()
+	clone.scale = Vector2(1, 1)
+	clone.position = Vector2(-992, -546)
+	clone.modulate.a = 0.5
+	control_preview.add_child(clone)
+	set_drag_preview(control_preview)
 	
-	name_label.text = card_object["name"]
-	description_label.text = card_object["effects"]
+	return self
 
 func _on_mouse_entered():
-	mouse_over = true
-	original_card_scale = scale
-	z_index = 10
+	if get_parent() == played:
+		return
+	
+	if original_scale == null:
+		original_scale = scale
+	
+	if original_y_position == null:
+		original_y_position = position.y
+	
+	self.z_index = 10
+	
 	var tween = create_tween()
-	tween.tween_property(self, "scale", scale * 1.2, 0.1)
-
+	tween.set_trans(Tween.TRANS_CUBIC)
+	tween.tween_property(self, "scale", original_scale * 1.2, 0.15)
+	tween.parallel().tween_property(self, "position", Vector2(position.x, original_y_position - 100), 0.15)
 
 
 func _on_mouse_exited():
-	mouse_over = false
-	z_index = 0
-	var tween = create_tween()
-	tween.tween_property(self, "scale", original_card_scale, 0.1)
-
-
-func _on_gui_input(event):
-	if (event is InputEventMouseButton):
-		dragging = event.pressed
-		relative_dragging_position = event.position
-	elif (event is InputEventMouseMotion and dragging):
-		global_position = get_global_mouse_position()
+	if get_parent() == played:
+		return
 	
+	self.z_index = 0 
+	
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_CUBIC)
+	tween.tween_property(self, "scale", original_scale, 0.15)
+	tween.parallel().tween_property(self, "position", Vector2(position.x, original_y_position), 0.15)

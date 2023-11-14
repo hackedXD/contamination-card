@@ -1,9 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://cprltuqivpr1x"]
+[gd_scene load_steps=12 format=3 uid="uid://cprltuqivpr1x"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_4v52g"]
 [ext_resource type="Texture2D" uid="uid://ddom8ny8rjq34" path="res://assets/Interior.png" id="1_h2r0k"]
-[ext_resource type="PackedScene" uid="uid://dbetfqi7l1mym" path="res://scenes/bar.tscn" id="3_xqb1x"]
-[ext_resource type="Texture2D" uid="uid://dn6hysrb0oh4v" path="res://card-atlas.tres" id="5_wf6g5"]
+[ext_resource type="Script" path="res://scripts/played.gd" id="3_x7o6y"]
+[ext_resource type="Texture2D" uid="uid://cx5l7xtqmx7ho" path="res://assets/corruption-bar-under.png" id="4_dpkkp"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="4_lb0ja"]
+[ext_resource type="Texture2D" uid="uid://bokj8rp130oo" path="res://assets/corruption-bar-over.png" id="5_hvyti"]
+[ext_resource type="Texture2D" uid="uid://yhio33fqr1ud" path="res://assets/corruption-bar-progress.png" id="6_uhmw5"]
+[ext_resource type="Texture2D" uid="uid://c1xoe36sktaoa" path="res://assets/play_crop.tres" id="8_eblly"]
+
+[sub_resource type="Environment" id="Environment_4bnpw"]
+sdfgi_enabled = true
+glow_enabled = true
+glow_intensity = 6.78
+glow_bloom = 1.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k0gc1"]
 texture = ExtResource("1_h2r0k")
@@ -607,74 +617,100 @@ sources/0 = SubResource("TileSetAtlasSource_k0gc1")
 [node name="main" type="Node2D"]
 script = ExtResource("1_4v52g")
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_4bnpw")
+
 [node name="table" type="TileMap" parent="."]
-position = Vector2(-250, -475)
-scale = Vector2(17, 17)
+position = Vector2(-200, -325)
+scale = Vector2(12, 12)
 tile_set = SubResource("TileSet_6l6rd")
 format = 2
 layer_0/tile_data = PackedInt32Array(65534, 524288, 16, 65535, 589824, 16, 0, 589824, 16, 1, 589824, 16, 2, 589824, 16, 3, 720896, 16, 65539, 720896, 17, 131070, 524288, 17, 196606, 524288, 18, 131071, 589824, 17, 196607, 589824, 18, 65536, 655360, 17, 131072, 655360, 18, 65537, 589824, 17, 131073, 589824, 18, 65538, 655360, 17, 131074, 655360, 18, 131075, 720896, 18, 262142, 524288, 19, 262143, 589824, 19, 196608, 655360, 19, 196609, 589824, 19, 196610, 655360, 19, 196611, 720896, 19)
 
-[node name="placeholder" type="ColorRect" parent="."]
-offset_left = -175.0
-offset_top = -104.0
-offset_right = -75.0
-offset_bottom = 24.0
-color = Color(1, 1, 1, 0.45098)
-
-[node name="placeholder2" type="ColorRect" parent="."]
-offset_left = -45.0
-offset_top = -104.0
-offset_right = 55.0
-offset_bottom = 24.0
-color = Color(1, 1, 1, 0.45098)
-
-[node name="placeholder3" type="ColorRect" parent="."]
-offset_left = 95.0
-offset_top = -104.0
-offset_right = 195.0
-offset_bottom = 24.0
-color = Color(1, 1, 1, 0.45098)
-
-[node name="bar" parent="." instance=ExtResource("3_xqb1x")]
-offset_left = -939.0
-offset_top = 480.0
-offset_right = -939.0
-offset_bottom = 480.0
-scale = Vector2(0.58, 0.58)
-
-[node name="second bar" parent="." instance=ExtResource("3_xqb1x")]
-offset_left = 951.0
-offset_top = -481.0
-offset_right = 951.0
-offset_bottom = -481.0
-rotation = 3.14159
-scale = Vector2(0.58, 0.58)
-
-[node name="deck" type="TextureRect" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -432.0
-offset_top = -138.0
-offset_right = -336.0
-offset_bottom = -10.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.5, 1.5)
-pivot_offset = Vector2(45, 72)
-mouse_filter = 0
-mouse_default_cursor_shape = 2
-texture = ExtResource("5_wf6g5")
-
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="hand" type="Node2D" parent="."]
-position = Vector2(-550, 325)
-scale = Vector2(2, 2)
+[node name="played" type="HBoxContainer" parent="."]
+offset_left = -548.0
+offset_top = -125.0
+offset_right = 1624.0
+offset_bottom = 227.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 50
+alignment = 1
+script = ExtResource("3_x7o6y")
 
-[connection signal="gui_input" from="deck" to="." method="_on_deck_gui_input"]
-[connection signal="mouse_entered" from="deck" to="." method="_on_deck_mouse_entered"]
-[connection signal="mouse_exited" from="deck" to="." method="_on_deck_mouse_exited"]
-[connection signal="child_entered_tree" from="hand" to="." method="_on_hand_child_entered_tree"]
+[node name="player1" type="Node2D" parent="."]
+script = ExtResource("4_lb0ja")
+
+[node name="status effects" type="VBoxContainer" parent="player1"]
+offset_left = -959.0
+offset_top = -60.0
+offset_right = -621.0
+offset_bottom = 355.0
+alignment = 2
+
+[node name="corruption bar" type="TextureProgressBar" parent="player1"]
+offset_left = -1039.0
+offset_top = 216.0
+offset_right = -975.0
+offset_bottom = 280.0
+scale = Vector2(8, 8)
+texture_under = ExtResource("4_dpkkp")
+texture_over = ExtResource("5_hvyti")
+texture_progress = ExtResource("6_uhmw5")
+
+[node name="mana container" type="HFlowContainer" parent="player1"]
+offset_left = -970.0
+offset_top = 369.0
+offset_right = -797.0
+offset_bottom = 384.0
+scale = Vector2(3, 3)
+
+[node name="deck" type="HBoxContainer" parent="player1"]
+offset_left = -219.0
+offset_top = 322.0
+offset_right = 937.0
+offset_bottom = 519.0
+theme_override_constants/separation = -50
+alignment = 2
+
+[node name="player2" type="Node2D" parent="."]
+rotation = 3.14159
+script = ExtResource("4_lb0ja")
+
+[node name="corruption bar" type="TextureProgressBar" parent="player2"]
+offset_left = -1039.0
+offset_top = 216.0
+offset_right = -975.0
+offset_bottom = 280.0
+scale = Vector2(8, 8)
+texture_under = ExtResource("4_dpkkp")
+texture_over = ExtResource("5_hvyti")
+texture_progress = ExtResource("6_uhmw5")
+
+[node name="mana container" type="HFlowContainer" parent="player2"]
+offset_left = -970.0
+offset_top = 369.0
+offset_right = -797.0
+offset_bottom = 384.0
+scale = Vector2(3, 3)
+
+[node name="deck" type="HBoxContainer" parent="player2"]
+offset_left = -219.0
+offset_top = 322.0
+offset_right = 937.0
+offset_bottom = 519.0
+theme_override_constants/separation = -50
+alignment = 2
+
+[node name="next_button" type="TextureButton" parent="."]
+offset_left = 905.0
+offset_top = -39.0
+offset_right = 956.0
+offset_bottom = 36.0
+texture_normal = ExtResource("8_eblly")
+stretch_mode = 0
+
+[connection signal="mouse_entered" from="next_button" to="." method="_on_next_button_mouse_entered"]
+[connection signal="mouse_exited" from="next_button" to="." method="_on_next_button_mouse_exited"]
+[connection signal="pressed" from="next_button" to="." method="_on_next_button_pressed"]

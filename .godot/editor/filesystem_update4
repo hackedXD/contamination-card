@@ -1,6 +1,8 @@
 res://scenes/main.tscn
-res://cards.json
-res://scenes/card.tscn
-res://scripts/card.gd
 res://scripts/main.gd
-res://scenes/bar.tscn
+res://scenes/card.tscn
+res://scenes/mana.tscn
+res://scenes/status-effect.tscn
+res://scripts/player.gd
+res://cards.json
+res://scripts/card.gd

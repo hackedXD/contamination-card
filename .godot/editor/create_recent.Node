@@ -1,4 +1,12 @@
 Label
+VBoxContainer
+TextureButton
+HBoxContainer
+Node2D
+TextureRect
+HFlowContainer
+TextureProgressBar
+RichTextLabel
+WorldEnvironment
 Control
 Sprite2D
-Node2D

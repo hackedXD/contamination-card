@@ -1,14 +1,33 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1699889940
-cards.json::JSON::-1::1699889354::0::1::::<><>::
+::res://::1699978562
 card-atlas.tres::AtlasTexture::8136181578514040811::1699858599::0::1::::<><>::uid://dnlw1q34r112l
+cards.json::JSON::-1::1699970210::0::1::::<><>::
 icon.svg::CompressedTexture2D::6491223497346487722::1699804156::1699870191::1::::<><>::
-::res://assets/::1699870193
+::res://assets/::1699977567
 backs.png::CompressedTexture2D::8095808263120295049::1699804975::1699870191::1::::<><>::
+corruption-bar-over.png::CompressedTexture2D::99715134517313774::1699971648::1699971650::1::::<><>::
+corruption-bar-progress.png::CompressedTexture2D::1699495142805580987::1699971588::1699971650::1::::<><>::
+corruption-bar-under.png::CompressedTexture2D::6449842374140409268::1699971492::1699971650::1::::<><>::
+corruption-bar.png::CompressedTexture2D::3365380192633062357::1699971361::1699971364::1::::<><>::
 Interior.png::CompressedTexture2D::7399518127063614093::1699808018::1699870191::1::::<><>::
-Kenney Pixel Square.ttf::FontFile::7715248829380451173::1699806499::1699870191::1::::<><>::
+Kenney Pixel Square.ttf::FontFile::7715248829380451173::1699806499::1699970871::1::::<><>::
+Mana.png::CompressedTexture2D::4927981247742021120::1699972173::1699972173::1::::<><>::
+mana_crop.tres::AtlasTexture::3914627324303368278::1699972399::0::1::::<><>::uid://cchfepvifouqq::::res://assets/Mana.png
 pixel-cards.png::CompressedTexture2D::1114552559981623772::1699804975::1699870191::1::::<><>::
+play.png::CompressedTexture2D::1542889586032113572::1699977400::1699977413::1::::<><>::
+play_crop.tres::AtlasTexture::6646090690767458196::1699977567::0::1::::<><>::uid://v8nfv765721e::::res://assets/play.png
 square-circle.png::CompressedTexture2D::2062587148422022008::1699804975::1699870193::1::::<><>::
+::res://assets/card/::1699967357
+cleanse.png::CompressedTexture2D::6695927277042704464::1699967351::1699967357::1::::<><>::
+corrupt.png::CompressedTexture2D::3062862150682744127::1699967351::1699967357::1::::<><>::
+greaterCleanse.png::CompressedTexture2D::5235639592696122533::1699967351::1699967357::1::::<><>::
+greaterCorrupt.png::CompressedTexture2D::1889979106665465088::1699967351::1699967357::1::::<><>::
+inheritance.png::CompressedTexture2D::3214776848366928013::1699967351::1699967357::1::::<><>::
+M.A.C..png::CompressedTexture2D::8251286192924584638::1699967351::1699967357::1::::<><>::
+oldNotebook.png::CompressedTexture2D::3324498667440643434::1699967351::1699967357::1::::<><>::
+providence.png::CompressedTexture2D::4414262283702028530::1699967351::1699967357::1::::<><>::
+recyclingEdict.png::CompressedTexture2D::1544694389870094022::1699967351::1699967357::1::::<><>::
+toxicSpill.png::CompressedTexture2D::6821799985142371463::1699967351::1699967357::1::::<><>::
 ::res://assets/rip/::1699870191
 cardripSHEET.png::CompressedTexture2D::5726090353532841928::1699804975::1699870191::1::::<><>::
 cardRIP_0000_015.png::CompressedTexture2D::8989579494087573549::1699804974::1699870191::1::::<><>::
@@ -38,18 +57,13 @@ sheen__0007_sheen08.png::CompressedTexture2D::7783724218512866752::1699804975::1
 sheen__0008_sheen09.png::CompressedTexture2D::5734467898448866741::1699804975::1699870191::1::::<><>::
 sheen__0009_sheen010.png::CompressedTexture2D::8700234964121279906::1699804975::1699870191::1::::<><>::
 sheen__0011_Background.png::CompressedTexture2D::3486495367304918327::1699804975::1699870191::1::::<><>::
-::res://scenes/::1699890283
-bar.tscn::PackedScene::7238871811767369452::1699890173::0::1::::<><>::
-card.tscn::PackedScene::6084093217838523538::1699890173::0::1::::<><>::uid://p45ruut3gisi::::res://assets/pixel-cards.png<>res://scripts/card.gd<>uid://bp0dfknr8a48y::::res://assets/sheen/sheen__0000_sheen01.png<>uid://cgetn47o7sqbk::::res://assets/sheen/sheen__0001_sheen02.png<>uid://deax5t2ivx0h::::res://assets/sheen/sheen__0002_sheen03.png<>uid://droordwpxoikk::::res://assets/sheen/sheen__0003_sheen04.png<>uid://c8615vs3d31gf::::res://assets/sheen/sheen__0004_sheen05.png<>uid://wca3bfv1aaio::::res://assets/sheen/sheen__0005_sheen06.png<>uid://20smpd2mnxe8::::res://assets/sheen/sheen__0006_sheen07.png<>uid://di5q2htihggf5::::res://assets/sheen/sheen__0007_sheen08.png<>uid://cnx2333kvcl0x::::res://assets/sheen/sheen__0008_sheen09.png<>uid://dv7pume3jd3lu::::res://assets/sheen/sheen__0009_sheen010.png<>uid://dh6layjxwo0tl::::res://assets/Kenney Pixel Square.ttf
-main.tscn::PackedScene::5861471336356358295::1699890173::0::1::::<><>::res://scripts/main.gd<>uid://ddom8ny8rjq34::::res://assets/Interior.png<>uid://dbetfqi7l1mym::::res://scenes/bar.tscn<>uid://dn6hysrb0oh4v::::res://card-atlas.tres
-::res://scenes/addons/::1699890283
-::res://scenes/addons/godot-git-plugin/::1699890283
-git_plugin.gdextension::GDExtension::-1::1699890283::0::1::::<><>::
-plugin.cfg::TextFile::-1::1699890283::0::1::::<><>::
-THIRDPARTY.md::TextFile::-1::1699890283::0::1::::<><>::
-::res://scenes/addons/godot-git-plugin/linux/::1699890283
-::res://scenes/addons/godot-git-plugin/macos/::1699890283
-::res://scenes/addons/godot-git-plugin/win64/::1699890283
-::res://scripts/::1699890090
-card.gd::GDScript::-1::1699889714::0::1::::<>Control<>::
-main.gd::GDScript::-1::1699890090::0::1::::<>Node2D<>::
+::res://scenes/::1699978303
+bar.tscn::PackedScene::7238871811767369452::1699967040::0::1::::<><>::
+card.tscn::PackedScene::6372787485052771365::1699978303::0::1::::<><>::uid://c2ns7dhvkxetc::::res://assets/card/cleanse.png<>res://scripts/card.gd<>uid://dh6layjxwo0tl::::res://assets/Kenney Pixel Square.ttf
+main.tscn::PackedScene::5861471336356358295::1699978303::0::1::::<><>::res://scripts/main.gd<>uid://ddom8ny8rjq34::::res://assets/Interior.png<>res://scripts/played.gd<>uid://cx5l7xtqmx7ho::::res://assets/corruption-bar-under.png<>res://scripts/player.gd<>uid://bokj8rp130oo::::res://assets/corruption-bar-over.png<>uid://yhio33fqr1ud::::res://assets/corruption-bar-progress.png<>uid://c1xoe36sktaoa::::res://assets/play_crop.tres
+mana.tscn::PackedScene::4935901175731467005::1699978303::0::1::::<><>::uid://bv1jltff7on31::::res://assets/mana_crop.tres
+::res://scripts/::1699978302
+card.gd::GDScript::-1::1699976423::0::1::::<>TextureRect<>::
+main.gd::GDScript::-1::1699978302::0::1::::<>Node2D<>::
+played.gd::GDScript::-1::1699976655::0::1::::<>HBoxContainer<>::
+player.gd::GDScript::-1::1699977117::0::1::::<>Node2D<>::

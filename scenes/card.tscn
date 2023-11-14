@@ -1,137 +1,48 @@
-[gd_scene load_steps=15 format=3 uid="uid://csxgekeb0o21s"]
+[gd_scene load_steps=4 format=3 uid="uid://cw2a445p8cepx"]
 
-[ext_resource type="Texture2D" uid="uid://p45ruut3gisi" path="res://assets/pixel-cards.png" id="1_qlqdd"]
+[ext_resource type="Texture2D" uid="uid://c2ns7dhvkxetc" path="res://assets/card/cleanse.png" id="1_2cjxw"]
 [ext_resource type="Script" path="res://scripts/card.gd" id="1_yhxn7"]
-[ext_resource type="Texture2D" uid="uid://bp0dfknr8a48y" path="res://assets/sheen/sheen__0000_sheen01.png" id="2_bmdur"]
-[ext_resource type="Texture2D" uid="uid://cgetn47o7sqbk" path="res://assets/sheen/sheen__0001_sheen02.png" id="3_4fck8"]
-[ext_resource type="Texture2D" uid="uid://deax5t2ivx0h" path="res://assets/sheen/sheen__0002_sheen03.png" id="4_ge2wm"]
-[ext_resource type="Texture2D" uid="uid://droordwpxoikk" path="res://assets/sheen/sheen__0003_sheen04.png" id="5_ne8ep"]
-[ext_resource type="Texture2D" uid="uid://c8615vs3d31gf" path="res://assets/sheen/sheen__0004_sheen05.png" id="6_j0xgx"]
-[ext_resource type="Texture2D" uid="uid://wca3bfv1aaio" path="res://assets/sheen/sheen__0005_sheen06.png" id="7_s4l3x"]
-[ext_resource type="Texture2D" uid="uid://20smpd2mnxe8" path="res://assets/sheen/sheen__0006_sheen07.png" id="8_1rg2g"]
-[ext_resource type="Texture2D" uid="uid://di5q2htihggf5" path="res://assets/sheen/sheen__0007_sheen08.png" id="9_nk04u"]
-[ext_resource type="Texture2D" uid="uid://cnx2333kvcl0x" path="res://assets/sheen/sheen__0008_sheen09.png" id="10_n1jq2"]
-[ext_resource type="Texture2D" uid="uid://dv7pume3jd3lu" path="res://assets/sheen/sheen__0009_sheen010.png" id="11_wvwq5"]
 [ext_resource type="FontFile" uid="uid://dh6layjxwo0tl" path="res://assets/Kenney Pixel Square.ttf" id="13_d0vhm"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_6q46u"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_bmdur")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_4fck8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_ge2wm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_ne8ep")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_j0xgx")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_s4l3x")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_1rg2g")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_nk04u")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_n1jq2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_wvwq5")
-}],
-"loop": true,
-"name": &"sheen",
-"speed": 10.0
-}]
-
-[node name="card" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -1052.0
-offset_bottom = -520.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.25, 0.25)
-pivot_offset = Vector2(2.08165e-12, 2.08165e-12)
-mouse_default_cursor_shape = 6
+[node name="card2" type="TextureRect"]
+offset_right = 220.0
+offset_bottom = 352.0
+scale = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+texture = ExtResource("1_2cjxw")
+stretch_mode = 4
 script = ExtResource("1_yhxn7")
 
-[node name="sheen" type="AnimatedSprite2D" parent="."]
-position = Vector2(2.08165e-12, 2.08165e-12)
-sprite_frames = SubResource("SpriteFrames_6q46u")
-animation = &"sheen"
-autoplay = "sheen"
-frame_progress = 0.973624
-centered = false
-
-[node name="bg" type="Sprite2D" parent="."]
-position = Vector2(2.08165e-12, 2.08165e-12)
-texture = ExtResource("1_qlqdd")
-centered = false
-region_enabled = true
-region_rect = Rect2(610, 157, 100, 128)
-
-[node name="name decoration" type="Sprite2D" parent="."]
-position = Vector2(50, 15)
-scale = Vector2(0.95, 0.95)
-texture = ExtResource("1_qlqdd")
-region_enabled = true
-region_rect = Rect2(16, 273, 96, 18)
-
-[node name="name label" type="Label" parent="name decoration"]
-offset_left = -47.0
-offset_top = -6.0
-offset_right = 327.0
-offset_bottom = 33.0
-scale = Vector2(0.25, 0.25)
-size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("13_d0vhm")
-theme_override_font_sizes/font_size = 24
-text = "The card Worshipper
-"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="frame decoration" type="Sprite2D" parent="."]
-position = Vector2(50, 60)
-scale = Vector2(0.9, 0.9)
-texture = ExtResource("1_qlqdd")
-region_enabled = true
-region_rect = Rect2(22, 136, 86, 72)
-
-[node name="desc decoration" type="Sprite2D" parent="."]
-position = Vector2(50, 107.5)
-scale = Vector2(0.9, 0.9)
-texture = ExtResource("1_qlqdd")
-region_enabled = true
-region_rect = Rect2(252, 223, 96, 29)
-
-[node name="description label" type="Label" parent="desc decoration"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -43.8889
-offset_top = -11.9445
-offset_right = 214.111
-offset_bottom = 49.0555
+[node name="name" type="Label" parent="."]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -531.5
+offset_top = 125.0
+offset_right = 531.5
+offset_bottom = 278.0
 grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.25, 0.25)
+scale = Vector2(0.15, 0.15)
+pivot_offset = Vector2(531.5, 83)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("13_d0vhm")
-theme_override_font_sizes/font_size = 16
-text = "I like sex i like durgs i like moneyy.  I also like to do moneyyyyyyyyyyyy"
+theme_override_font_sizes/font_size = 100
+text = "Greater Cleanse"
+
+[node name="description" type="Label" parent="."]
+texture_filter = 2
+layout_mode = 0
+offset_left = 19.0
+offset_top = 220.0
+offset_right = 199.0
+offset_bottom = 320.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("13_d0vhm")
+theme_override_font_sizes/font_size = 10
+text = "Cleanses 10 Corruption"
 autowrap_mode = 3
 
-[connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

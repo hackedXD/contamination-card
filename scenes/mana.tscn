@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cck8tolh85870"]
+
+[ext_resource type="Texture2D" uid="uid://bv1jltff7on31" path="res://assets/mana_crop.tres" id="1_77go3"]
+
+[node name="mana" type="TextureRect"]
+pivot_offset = Vector2(7.5, 7.5)
+texture = ExtResource("1_77go3")
