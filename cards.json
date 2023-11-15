@@ -18,28 +18,28 @@
 		"effects": "Deal 5 corruption",
 		"cost": 0,
 		"asset": "corrupt.png",
-		"action": "enemyCorruption+5"
+		"action": "enemycorruption+5"
 	},
 	{
 		"name": "Greater Corrupt",
 		"effects": "Deal 10 corruption",
 		"cost": 1,
 		"asset": "greaterCorrupt.png",
-		"action": "enemyCorruption+10"
+		"action": "enemycorruption+10"
 	},
 	{
 		"name": "Providence",
 		"effects": "Grants yourself a shield, absorbing 10 corruption",
 		"cost": 1,
 		"asset": "providence.png",
-		"action": "statusShield"
+		"action": "shield"
 	},
 	{
 		"name": "M.A.C.",
 		"effects": "Take and Deal 10 Corruption",
 		"cost": 1,
 		"asset": "M.A.C..png",
-		"action": "corruption+10/enemyCorruption+10"
+		"action": "corruption+5/enemycorruption+10"
 	},
 	{
 		"name": "Old Notebook",
@@ -53,7 +53,7 @@
 		"effects": "Gain 2 mana next turn",
 		"cost": 1,
 		"asset": "inheritance.png",
-		"action": "statusInheritance"
+		"action": "inheritance"
 	},
 	{
 		"name": "Recycling Edict",
@@ -67,6 +67,80 @@
 		"effects": "Apply 4 Poison to Enemy.",
 		"cost": 1,
 		"asset": "toxicSpill.png",
-		"action": "statusPoison+4"
+		"action": "poisonenemy+4"
+	},
+	{
+		"name": "Citrine Jellyfish",
+		"effects": "Gain 3 shield points for every card you have in your hand. Discards 1 random card.",
+		"cost": 2,
+		"asset": "citrineJellyfish.png",
+		"action": "citrus/delete+1"
+	},
+	{
+		"name": "Conceptual Weakness",
+		"effects": "Destroys both player’s shields",
+		"tainted": "M.A.C.",
+		"cost": 1,
+		"asset": "conceptualWeakness.png",
+		"action": "concept_weakness"
+	},
+	{
+		"name": "Forbidden Knowledge",
+		"effects": "Gain 1 mana. Cures both players of any poison.",
+		"tainted": "Old Notebook",
+		"cost": 0,
+		"cost_corruption": 10,
+		"asset": "forbiddenKnowledge.png",
+		"action": "mana+1/forbiddenknowledge"
+	},
+	{
+		"name": "Fountain Of Youth",
+		"effects": "Gain 1 Mana.",
+		"cost": 0,
+		"asset": "fountainOfYouth.png",
+		"action": "mana+1"
+	},
+	{
+		"name": "Instant Noodles",
+		"effects": "Deals 20% of the opponent’s remaining uncorrupted bar.",
+		"cost": 2,
+		"asset": "instantNoodles.png",
+		"action": "instantnoodles"
+	},
+	{
+		"name": "Pharus Servatoris",
+		"effects": "Swap corruption bars.",
+		"cost": 2,
+		"asset": "pharusServatoris.png",
+		"action": "pharus"
+	},
+	{
+		"name": "Power Outage",
+		"effects": "Deal 3 corruption for every card you have in your hand. Discards 1 random card",
+		"cost": 2,
+		"asset": "powerOutage.png",
+		"action": "outage/delete+1"
+	},
+	{
+		"name": "Reforge",
+		"effects": "Discard 1 Random Card. Draw 1 new random Card",
+		"cost": 1,
+		"asset": "reforge.png",
+		"action": "delete+1/draw+1"
+	},
+	{
+		"name": "Shattered Shades",
+		"effects": "Grants yourself a shield, absorbing a 15 corruption. Grants opponent a shield, absorbing a 5 corruption.",
+		"cost": 2,
+		"tainted": "Providence",
+		"asset": "shatteredShades.png",
+		"action": "shield+15/oppshield+5"
+	},
+	{
+		"name": "Taint",
+		"effects": "When played all cards in your hand with a tainted variant will be converted into said tainted variant.",
+		"cost": 0,
+		"asset": "taint.png",
+		"action": "taint"
 	}
 ]

@@ -1,12 +1,14 @@
 Label
+GPUParticles2D
 VBoxContainer
-TextureButton
 HBoxContainer
+WorldEnvironment
+ColorRect
 Node2D
+TextureButton
 TextureRect
 HFlowContainer
 TextureProgressBar
 RichTextLabel
-WorldEnvironment
 Control
 Sprite2D

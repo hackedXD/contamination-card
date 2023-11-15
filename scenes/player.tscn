@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=3 uid="uid://bojfny3baxxjo"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_44cb2"]
+[ext_resource type="Texture2D" uid="uid://cx5l7xtqmx7ho" path="res://assets/corruption-bar-under.png" id="2_jjeq2"]
+[ext_resource type="Texture2D" uid="uid://bokj8rp130oo" path="res://assets/corruption-bar-over.png" id="3_c5amy"]
+[ext_resource type="Texture2D" uid="uid://yhio33fqr1ud" path="res://assets/corruption-bar-progress.png" id="4_h2m5i"]
+[ext_resource type="FontFile" uid="uid://dh6layjxwo0tl" path="res://assets/Kenney Pixel Square.ttf" id="5_f6sr6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6lld5"]
+font = ExtResource("5_f6sr6")
+font_size = 8
+
+[node name="player" type="Node2D"]
+script = ExtResource("1_44cb2")
+
+[node name="status effects" type="VBoxContainer" parent="."]
+clip_contents = true
+offset_left = -959.0
+offset_top = -60.0
+offset_right = -621.0
+offset_bottom = 355.0
+alignment = 2
+
+[node name="corruption bar" type="TextureProgressBar" parent="."]
+offset_left = -1039.0
+offset_top = 216.0
+offset_right = -898.0
+offset_bottom = 280.0
+scale = Vector2(8, 8)
+texture_under = ExtResource("2_jjeq2")
+texture_over = ExtResource("3_c5amy")
+texture_progress = ExtResource("4_h2m5i")
+
+[node name="score_label" type="Label" parent="corruption bar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.285
+anchor_top = 0.5
+anchor_right = 0.285
+anchor_bottom = 0.5
+offset_left = 19.815
+offset_top = -9.0
+offset_right = 74.815
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+text = "0/100"
+label_settings = SubResource("LabelSettings_6lld5")
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="mana container" type="HFlowContainer" parent="."]
+offset_left = -970.0
+offset_top = 369.0
+offset_right = -797.0
+offset_bottom = 384.0
+scale = Vector2(3, 3)
+
+[node name="deck" type="Node2D" parent="."]
+position = Vector2(650, 100)
+scale = Vector2(2, 2)
+
+[connection signal="value_changed" from="corruption bar" to="." method="_on_corruption_bar_value_changed"]

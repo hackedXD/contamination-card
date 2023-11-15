@@ -1,19 +1,35 @@
-[gd_scene load_steps=12 format=3 uid="uid://cprltuqivpr1x"]
+[gd_scene load_steps=9 format=3 uid="uid://cprltuqivpr1x"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_4v52g"]
 [ext_resource type="Texture2D" uid="uid://ddom8ny8rjq34" path="res://assets/Interior.png" id="1_h2r0k"]
 [ext_resource type="Script" path="res://scripts/played.gd" id="3_x7o6y"]
-[ext_resource type="Texture2D" uid="uid://cx5l7xtqmx7ho" path="res://assets/corruption-bar-under.png" id="4_dpkkp"]
-[ext_resource type="Script" path="res://scripts/player.gd" id="4_lb0ja"]
-[ext_resource type="Texture2D" uid="uid://bokj8rp130oo" path="res://assets/corruption-bar-over.png" id="5_hvyti"]
-[ext_resource type="Texture2D" uid="uid://yhio33fqr1ud" path="res://assets/corruption-bar-progress.png" id="6_uhmw5"]
+[ext_resource type="PackedScene" uid="uid://bojfny3baxxjo" path="res://scenes/player.tscn" id="4_da0uj"]
 [ext_resource type="Texture2D" uid="uid://c1xoe36sktaoa" path="res://assets/play_crop.tres" id="8_eblly"]
 
 [sub_resource type="Environment" id="Environment_4bnpw"]
-sdfgi_enabled = true
+background_mode = 3
+tonemap_mode = 2
+tonemap_white = 2.0
+ssr_fade_in = 0.00269226
+ssao_radius = 1.21
+ssao_intensity = 8.83
+ssao_power = 3.02011e-05
+ssil_radius = 16.0
+ssil_intensity = 12.7
+ssil_sharpness = 0.0
+sdfgi_energy = 4.2
 glow_enabled = true
-glow_intensity = 6.78
-glow_bloom = 1.0
+glow_levels/1 = 1.82
+glow_levels/2 = 0.36
+glow_levels/3 = 1.09
+glow_levels/5 = 0.0
+glow_intensity = 0.2
+glow_strength = 1.5
+glow_hdr_scale = 0.0
+adjustment_enabled = true
+adjustment_brightness = 0.9
+adjustment_contrast = 0.9
+adjustment_saturation = 1.09
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k0gc1"]
 texture = ExtResource("1_h2r0k")
@@ -621,6 +637,7 @@ script = ExtResource("1_4v52g")
 environment = SubResource("Environment_4bnpw")
 
 [node name="table" type="TileMap" parent="."]
+z_index = -10
 position = Vector2(-200, -325)
 scale = Vector2(12, 12)
 tile_set = SubResource("TileSet_6l6rd")
@@ -628,8 +645,9 @@ format = 2
 layer_0/tile_data = PackedInt32Array(65534, 524288, 16, 65535, 589824, 16, 0, 589824, 16, 1, 589824, 16, 2, 589824, 16, 3, 720896, 16, 65539, 720896, 17, 131070, 524288, 17, 196606, 524288, 18, 131071, 589824, 17, 196607, 589824, 18, 65536, 655360, 17, 131072, 655360, 18, 65537, 589824, 17, 131073, 589824, 18, 65538, 655360, 17, 131074, 655360, 18, 131075, 720896, 18, 262142, 524288, 19, 262143, 589824, 19, 196608, 655360, 19, 196609, 589824, 19, 196610, 655360, 19, 196611, 720896, 19)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+rotation = -3.14159
 
-[node name="played" type="HBoxContainer" parent="."]
+[node name="played" type="HBoxContainer" parent="." groups=["played"]]
 offset_left = -548.0
 offset_top = -125.0
 offset_right = 1624.0
@@ -639,69 +657,11 @@ theme_override_constants/separation = 50
 alignment = 1
 script = ExtResource("3_x7o6y")
 
-[node name="player1" type="Node2D" parent="."]
-script = ExtResource("4_lb0ja")
+[node name="player1" parent="." instance=ExtResource("4_da0uj")]
 
-[node name="status effects" type="VBoxContainer" parent="player1"]
-offset_left = -959.0
-offset_top = -60.0
-offset_right = -621.0
-offset_bottom = 355.0
-alignment = 2
-
-[node name="corruption bar" type="TextureProgressBar" parent="player1"]
-offset_left = -1039.0
-offset_top = 216.0
-offset_right = -975.0
-offset_bottom = 280.0
-scale = Vector2(8, 8)
-texture_under = ExtResource("4_dpkkp")
-texture_over = ExtResource("5_hvyti")
-texture_progress = ExtResource("6_uhmw5")
-
-[node name="mana container" type="HFlowContainer" parent="player1"]
-offset_left = -970.0
-offset_top = 369.0
-offset_right = -797.0
-offset_bottom = 384.0
-scale = Vector2(3, 3)
-
-[node name="deck" type="HBoxContainer" parent="player1"]
-offset_left = -219.0
-offset_top = 322.0
-offset_right = 937.0
-offset_bottom = 519.0
-theme_override_constants/separation = -50
-alignment = 2
-
-[node name="player2" type="Node2D" parent="."]
-rotation = 3.14159
-script = ExtResource("4_lb0ja")
-
-[node name="corruption bar" type="TextureProgressBar" parent="player2"]
-offset_left = -1039.0
-offset_top = 216.0
-offset_right = -975.0
-offset_bottom = 280.0
-scale = Vector2(8, 8)
-texture_under = ExtResource("4_dpkkp")
-texture_over = ExtResource("5_hvyti")
-texture_progress = ExtResource("6_uhmw5")
-
-[node name="mana container" type="HFlowContainer" parent="player2"]
-offset_left = -970.0
-offset_top = 369.0
-offset_right = -797.0
-offset_bottom = 384.0
-scale = Vector2(3, 3)
-
-[node name="deck" type="HBoxContainer" parent="player2"]
-offset_left = -219.0
-offset_top = 322.0
-offset_right = 937.0
-offset_bottom = 519.0
-theme_override_constants/separation = -50
-alignment = 2
+[node name="player2" parent="." instance=ExtResource("4_da0uj")]
+rotation = -3.14159
+inital_mana = 0
 
 [node name="next_button" type="TextureButton" parent="."]
 offset_left = 905.0
@@ -714,3 +674,6 @@ stretch_mode = 0
 [connection signal="mouse_entered" from="next_button" to="." method="_on_next_button_mouse_entered"]
 [connection signal="mouse_exited" from="next_button" to="." method="_on_next_button_mouse_exited"]
 [connection signal="pressed" from="next_button" to="." method="_on_next_button_pressed"]
+
+[editable path="player1"]
+[editable path="player2"]

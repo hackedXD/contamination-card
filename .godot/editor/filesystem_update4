@@ -1,8 +1,5 @@
 res://scenes/main.tscn
-res://scripts/main.gd
-res://scenes/card.tscn
-res://scenes/mana.tscn
+res://crt.gdshader
+res://assets/card.gdshader
 res://scenes/status-effect.tscn
-res://scripts/player.gd
-res://cards.json
-res://scripts/card.gd
+res://scenes/player.tscn

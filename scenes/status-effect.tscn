@@ -10,5 +10,8 @@ shadow_size = 4
 shadow_color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label"]
+offset_right = 168.0
+offset_bottom = 45.0
+pivot_offset = Vector2(88, 23)
 text = "+4 Poison"
 label_settings = SubResource("LabelSettings_b5nvp")
