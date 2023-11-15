@@ -1,13 +1,13 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1700035609
+::res://::1700055707
 card-atlas.tres::AtlasTexture::8136181578514040811::1699858599::0::1::::<><>::uid://dnlw1q34r112l
 cards.json::JSON::-1::1700034517::0::1::::<><>::
-crt.gdshader::Shader::-1::1700035142::0::1::::<><>::
+crt.gdshader::Shader::-1::1700043279::0::1::::<><>::
 export_presets.cfg::TextFile::-1::1699984807::0::1::::<><>::
 icon.svg::CompressedTexture2D::6491223497346487722::1699804156::1699870191::1::::<><>::
-::res://assets/::1700035142
+::res://assets/::1700043279
 backs.png::CompressedTexture2D::8095808263120295049::1699804975::1699870191::1::::<><>::
-card.gdshader::Shader::-1::1700035142::0::1::::<><>::
+card.gdshader::Shader::-1::1700043279::0::1::::<><>::
 corruption-bar-over.png::CompressedTexture2D::99715134517313774::1699971648::1699971650::1::::<><>::
 corruption-bar-progress.png::CompressedTexture2D::1699495142805580987::1699971588::1699971650::1::::<><>::
 corruption-bar-under.png::CompressedTexture2D::6449842374140409268::1699971492::1699971650::1::::<><>::
@@ -77,21 +77,13 @@ sheen__0007_sheen08.png::CompressedTexture2D::7783724218512866752::1699804975::1
 sheen__0008_sheen09.png::CompressedTexture2D::5734467898448866741::1699804975::1699870191::1::::<><>::
 sheen__0009_sheen010.png::CompressedTexture2D::8700234964121279906::1699804975::1699870191::1::::<><>::
 sheen__0011_Background.png::CompressedTexture2D::3486495367304918327::1699804975::1699870191::1::::<><>::
-::res://exports/::1699982426
-contamination-card.144x144.png::CompressedTexture2D::8145040537449502523::1699982000::1699982161::1::::<><>::
-contamination-card.180x180.png::CompressedTexture2D::3130646604720035330::1699982000::1699982161::1::::<><>::
-contamination-card.512x512.png::CompressedTexture2D::8977940023294355240::1699982000::1699982161::1::::<><>::
-contamination-card.apple-touch-icon.png::CompressedTexture2D::3389034259895811330::1699982000::1699982161::1::::<><>::
-contamination-card.icon.png::CompressedTexture2D::3057605485273160276::1699982000::1699982161::1::::<><>::
-contamination-card.manifest.json::JSON::-1::1699982000::0::1::::<><>::
-contamination-card.png::CompressedTexture2D::1955356236333251151::1699982000::1699982161::1::::<><>::
-::res://scenes/::1700034919
+::res://scenes/::1700035623
 bar.tscn::PackedScene::7238871811767369452::1699967040::0::1::::<><>::
-card.tscn::PackedScene::6372787485052771365::1700032651::0::1::::<><>::res://assets/card.gdshader<>res://scripts/card.gd<>uid://dh6layjxwo0tl::::res://assets/Kenney Pixel Square.ttf
-main.tscn::PackedScene::5861471336356358295::1700034918::0::1::::<><>::res://scripts/main.gd<>uid://ddom8ny8rjq34::::res://assets/Interior.png<>res://scripts/played.gd<>uid://bojfny3baxxjo::::res://scenes/player.tscn<>uid://c1xoe36sktaoa::::res://assets/play_crop.tres
+card.tscn::PackedScene::6372787485052771365::1700032651::0::1::::<><>::res://assets/card.gdshader<>res://scripts/card.gd<>uid://dh6layjxwo0tl
+main.tscn::PackedScene::5861471336356358295::1700035623::0::1::::<><>::res://scripts/main.gd<>uid://ddom8ny8rjq34::::res://assets/Interior.png<>res://scripts/played.gd<>uid://bojfny3baxxjo::::res://scenes/player.tscn<>uid://c1xoe36sktaoa::::res://assets/play_crop.tres
 mana.tscn::PackedScene::4935901175731467005::1699982571::0::1::::<><>::uid://bv1jltff7on31
-player.tscn::PackedScene::3387971998557981812::1700034919::0::1::::<><>::res://scripts/player.gd<>uid://cx5l7xtqmx7ho::::res://assets/corruption-bar-under.png<>uid://bokj8rp130oo::::res://assets/corruption-bar-over.png<>uid://yhio33fqr1ud::::res://assets/corruption-bar-progress.png<>uid://dh6layjxwo0tl::::res://assets/Kenney Pixel Square.ttf
-status-effect.tscn::PackedScene::8007582830041113044::1700034919::0::1::::<><>::uid://dh6layjxwo0tl::::res://assets/Kenney Pixel Square.ttf
+player.tscn::PackedScene::3387971998557981812::1700035623::0::1::::<><>::res://scripts/player.gd<>uid://cx5l7xtqmx7ho::::res://assets/corruption-bar-under.png<>uid://bokj8rp130oo::::res://assets/corruption-bar-over.png<>uid://yhio33fqr1ud::::res://assets/corruption-bar-progress.png<>uid://dh6layjxwo0tl::::res://assets/Kenney Pixel Square.ttf
+status-effect.tscn::PackedScene::8007582830041113044::1700035623::0::1::::<><>::uid://dh6layjxwo0tl::::res://assets/Kenney Pixel Square.ttf
 ::res://scripts/::1700034672
 card.gd::GDScript::-1::1700034384::0::1::::<>TextureRect<>::
 main.gd::GDScript::-1::1700034666::0::1::::<>Node2D<>::

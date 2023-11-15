@@ -142,5 +142,21 @@
 		"cost": 0,
 		"asset": "taint.png",
 		"action": "taint"
+	},
+	{
+		"name": "Zealot's Sacrifice",
+		"effects": "Cleanse 15 corruption",
+		"cost": 0,
+		"tainted": "Cleanse",
+		"asset": "zealotssacrifice.png",
+		"action": "corruption+-15/poison+5"
+	},
+	{
+		"name": "Unstable Catalyst",
+		"effects": "Deal 10 corruption",
+		"cost": 0,
+		"tainted": "Corrupt",
+		"asset": "taint.png",
+		"action": "enemycorruption+10/poison+3"
 	}
 ]
